@@ -6,12 +6,12 @@
 class Solution {
 public:
 bool isPalindrome(int x) {
-    // Negative numbers are not palindromes
+    // here, we consider negative numbers as non-palindrome number
     if (x < 0) {
         return false;
     }
-    
-    // Numbers ending in 0 are not palindromes unless the number is 0
+
+    //numbers ending with 0 are cancelled out as for it to be pallindrome it needs to start with 0
     if (x != 0 && x % 10 == 0) {
         return false;
     }
@@ -22,7 +22,7 @@ bool isPalindrome(int x) {
         x /= 10;
     }
     
-    // When the length is an odd number, we can get rid of the middle digit by reversedHalf / 10
+    // when the length is an odd number, we can get rid of the middle digit by reversedHalf / 10
     return x == reversedHalf || x == reversedHalf / 10;
 }
 };
